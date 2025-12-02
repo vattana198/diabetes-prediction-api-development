@@ -39,14 +39,45 @@ diabetes-prediction/
 
 ## Installation
 
+### Local Development
+
 1. Install dependencies:
 ```bash
 pip install -e .
 ```
 
-Or using uv (if available):
+Or using uv (faster):
 ```bash
+# Install uv first (if not installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install project dependencies
 uv pip install -e .
+```
+
+### EC2 Deployment
+
+For detailed EC2 deployment instructions with uv, see [EC2_DEPLOYMENT.md](EC2_DEPLOYMENT.md)
+
+Quick start on EC2:
+```bash
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Install Python (if needed)
+uv python install 3.13
+
+# Install project
+uv pip install -e .
+
+# Set environment variables
+export PUBLIC_IP=your-ec2-public-ip
+export PORT=8000
+export ENVIRONMENT=production
+
+# Run API
+python3 run_api.py
 ```
 
 ## Model Training
