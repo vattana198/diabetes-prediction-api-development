@@ -1,0 +1,22 @@
+{
+    "model_name": "Random Forest",
+    "model_type": "RandomForestClassifier",
+    "selected_features": [
+        "HbA1c_level",
+        "blood_glucose_level",
+        "age",
+        "bmi",
+        "smoking_history",
+        "gender",
+        "hypertension"
+    ],
+    "performance_metrics": {
+        "accuracy": 0.959334373374935,
+        "precision": 0.7899746192893401,
+        "recall": 0.7340801886792453,
+        "f1_score": 0.761002444987775,
+        "roc_auc": 0.962987862799176
+    },
+    "training_samples": 140260,
+    "test_samples": 19230
+}
